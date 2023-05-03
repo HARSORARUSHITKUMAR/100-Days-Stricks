@@ -1,0 +1,29 @@
+int main() {
+    int k = 0;
+    printf("\nEnter Value Of K : ");
+    scanf("%d",&k);
+    
+    struct Node* head = NULL;
+    int val;
+    printf("\nEnter the first value for the linked list (-1 to end): ");
+    scanf("%d", &val);
+    
+    while(val != -1) {
+        insert(&head, val);
+        printf("\nEnter the next value for the linked list (-1 to end): ");
+        scanf("%d", &val);
+    }
+    
+    printf("\nOriginal Linked List: ");
+    printList(head);
+    
+    head = reverseGroup(head, k);
+
+    printf("K = %d\n",k);
+    
+    printf("Reversed Linked List: ");
+    printList(head);
+    printf("\n");
+    
+    return 0;
+}
